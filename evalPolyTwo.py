@@ -12,17 +12,22 @@ import numpy as np
 from numpy.polynomial.polynomial import polyval
 
 
-xi = -10    # Initial x value
-xf = 10     # Final x value
-nx = 100    # Number of x values we want
+xi = -5    # Initial x value
+xf = 5     # Final x value
+nx = 50     # Number of x values we want
 coeff = np.array([8, 0, 4, 3])
 
-x = np.linspace(xi, xf, nx)
-y = polyval(x, coeff)
+x = np.linspace(xi, xf, nx)     # Create a list of evenly spaced x values using numpy linspace function
+y = polyval(x, coeff)           # Evaluate the polynomial
 
-line, = plot.plot(x, y)
+line, = plot.plot(x, y)         # Use MATPLOTLIB to plot the graph
 
-plot.show()
+plot.show()                     # Display the graph
 
-for i in range(nx):
-    print("{} {}".format(x[i], y[i]))
+print("Coeffcient list: ")
+print(coeff)
+
+print("X and Y Pairs")
+for i in range(nx):             # Display the x and y values
+    print("({}, {})".format(x[i], y[i]))
+
